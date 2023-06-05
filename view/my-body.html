@@ -1,50 +1,27 @@
-<div class="contenedorBody">
+<div class="contenedorBody" id="products">
     <div class="text-center pt-5 pb-4"><h1>INVOICE DETAIL</h1></div>
-    <div class="row row-cols-1 row-cols-md-6 px-4">
+    <div id="product_0" class="row row-cols-2 row-cols-md-6 px-4">
         <div>
-            <label for="N_Bill" class="form-label">COD PRODUCT</label>
-            <input type="number" class="form-control py-2" name="N_Bill" id="N_Bill" placeholder="Type to number bill">
-        </div>
-        <div>
-            <label for="Bill_Date" class="form-label">NAME PRODUCT</label>
-            <input type="date" class="form-control py-2 mb-4" name="Bill_Date" id="Bill_Date" placeholder="Type to number bill">
+            <label for="cod_Product" class="form-label">COD PRODUCT</label>
+            <input type="number" class="form-control py-2" name="Cod_Product" id="Cod_Product">
         </div>
         <div>
-            <label for="Seller" class="form-label">QUANTITY</label>
-            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+            <label for="name_Product" class="form-label">NAME PRODUCT</label>
+            <input type="text" class="form-control py-2 mb-4" name="Name_Product" id="Name_Product">
         </div>
         <div>
-            <label for="Seller" class="form-label">UNIT VALUE</label>
-            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
-        </div>
-        <div class="botones">
-            <button type="button" class="btn btn-success">+</button>
-        </div>
-        <div class="botones">
-            <button type="button" class="btn btn-danger">-</button>
-        </div>
-
-        <div>
-            <label for="Seller" class="form-label">COD PRODUCT</label>
-            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+            <label for="amount" class="form-label">AMOUNT</label>
+            <input type="number" class="form-control py-2 mb-4" name="amount" id="amount" value="1" readonly>
         </div>
         <div>
-            <label for="Seller" class="form-label">NAME PRODUCT</label>
-            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+            <label for="unit_Value" class="form-label">UNIT VALUE</label>
+            <input type="number" class="form-control py-2 mb-4" name="Unit_Value" id="Unit_Value">
         </div>
-        <div>
-            <label for="Seller" class="form-label">QUANTITY</label>
-            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        <div class="botones mb-4 mb-md-0">
+            <button type="button" class="btn btn-success" data-row="product_0">+</button>
         </div>
-        <div>
-            <label for="Seller" class="form-label">UNIT VALUE</label>
-            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
-        </div>
-        <div class="botones">
-            <button type="button" class="btn btn-success">+</button>
-        </div>
-        <div class="botones">
-            <button type="button" class="btn btn-danger">-</button>
+        <div class="botones mb-4 mb-md-0">
+            <button type="button" class="btn btn-danger" data-row="product_0">-</button>
         </div>
     </div>
 </div>
@@ -56,6 +33,7 @@
         border: 1px solid white;
         border-radius: 2px;
         margin-left: 50%;
+        margin-bottom: 40px;
         transform: translateX(-50%);
         background-color: rgb(247, 239, 239);
         box-shadow: -10px -10px 15px white;
@@ -107,8 +85,8 @@
             margin: 0px 0px 10px 0px !important;  
         }
 
-        .contenedorBody button{    
-            width: 60%;
+        .botones button{    
+            width: 10%;
             height: 100%;
         }
     }
