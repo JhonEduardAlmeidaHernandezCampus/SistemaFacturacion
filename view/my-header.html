@@ -1,34 +1,100 @@
-<div class="bd-danger px-2" style="background-color: red;">
-    <h1 class="col-11 text-center titulo">Sistema de Facturación Hunters</h1>
-    <div class="bg-secondary bg-gradient rounded" style="--bs-bg-opacity: .4; border-style: dashed;">
-        <div class="row cols-1 gy-2 py-4">
-            <div class="col-sm-12 text-center"><h2>Header the bill</h2></div>
-            <div class="col-sm-4">
-                <label for="N_Bill" class="form-label">Nro the bill</label>
-                <input type="number" class="form-control" name="N_Bill" id="N_Bill" placeholder="Type to number bill">
-            </div>
-            <div class="col-sm-4">
-                <label for="Bill_Date" class="form-label">Bill Date</label>
-                <input type="date" class="form-control" name="Bill_Date" id="Bill_Date" placeholder="Type to number bill">
-            </div>
-            <div class="col-sm-4">
-                <label for="Seller" class="form-label">Seller</label>
-                <input type="text" class="form-control" name="Seller" id="Seller" placeholder="Type to number bill">
-            </div>
-    
-            <div class="col-sm-4">
-                <label for="Seller" class="form-label">Id the </label>
-                <input type="text" class="form-control" name="Seller" id="Seller" placeholder="Type to number bill">
-            </div>
-            <div class="col-sm-4">
-                <label for="Seller" class="form-label">Seller</label>
-                <input type="text" class="form-control" name="Seller" id="Seller" placeholder="Type to number bill">
-            </div>
-            <div class="col-sm-4">
-                <label for="Seller" class="form-label">Seller</label>
-                <input type="text" class="form-control" name="Seller" id="Seller" placeholder="Type to number bill">
-            </div>
+<h1 class="col-12 mt-5 mb-4 text-center titulo">HUNTERS BILLING SYSTEM</h1>
+
+<div class="contenedorHeader">
+    <div class="text-center pt-5 pb-4"><h1>HEADER THE BILL</h1></div>
+    <div class="row contenedoresInput row-cols-1 row-cols-md-3 px-4">
+        <div>
+            <label for="N_Bill" class="form-label">INVOICE NUMBER</label>
+            <input type="number" class="form-control py-2" name="N_Bill" id="N_Bill" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Bill_Date" class="form-label">INVOICING DATE</label>
+            <input type="date" class="form-control py-2 mb-4" name="Bill_Date" id="Bill_Date" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Seller" class="form-label">SELLER</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+
+        <div>
+            <label for="Seller" class="form-label">CLIENT ID</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Seller" class="form-label">NAME AND LAST NAME</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Seller" class="form-label">CLIENT EMAIL</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+        
+        <div>
+            <label for="Seller" class="form-label">CLIENT ADDRESS</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Seller" class="form-label">CLIENT PHONE</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
         </div>
     </div>
 </div>
 
+<style>
+    .titulo::after{
+        border: none;
+        content: "HUNTERS BILLING SYSTEM";
+        width: 100%;
+        color: rgb(255, 0, 0);
+        text-shadow: 2px 2px 4px red;
+        font-size: 100%;
+        position: absolute;
+        left: 0px;
+        top: 40px;
+    }
+
+    .contenedorHeader{
+        width: 95%;
+        border: 1px solid white;
+        border-radius: 2px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        background-color: rgb(247, 239, 239);
+        box-shadow: 10px 10px 15px white;
+    }
+
+    .contenedoresInput{
+        display: flex;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedorHeader h1::after{
+        content: "HEADER THE BILL";
+        width: 100%;
+        color: rgb(25, 0, 255);
+        text-shadow: 2px 2px 4px blue;
+        font-size: 100%;
+        position: absolute;
+        left: 0px;
+        top: 40px;
+    }
+
+    .row {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .contenedorHeader label{
+        color: white;
+    }
+
+    .contenedorHeader input{   
+        text-align: center;     
+        box-shadow: 5px 5px 5px green;
+        font-size: 100%;
+        outline: none;
+    }
+</style>

@@ -1,23 +1,115 @@
-<div style="background-color: green;">
-    <div class="col-11 bg-gradient rounded" style="--bs-bg-opacity: .4; border-style: dashed;">
-        <div class="col-md-12 text-center"><h2>Invoice header</h2></div>
-        <div class="row row-cols-6 cols-2 gy-2 py-4">
-                <div class="">
-                    <label for="N_Bill" class="form-label">N de bill</label>
-                    <input type="number" class="form-control" name="N_Bill" id="N_Bill" placeholder="Type the bill's number">
-                </div>
-                <div class="">
-                    <label for="Bill_Date" class="form-label">Bill Date</label>
-                    <input type="date" class="form-control" name="Bill_Date" id="Bill_Date">
-                </div>
-                <div class="">
-                    <label for="Seller" class="form-label">Seller</label>
-                    <input type="text" class="form-control" name="Seller" id="Seller" placeholder="Type the seller's name">
-                </div>
-                <div class="">
-                    <label for="Identification" class="form-label">Customer identification</label>
-                    <input type="number" class="form-control" name="Identification" id="Identification" placeholder="Type the customer's ID">
-                </div>
+<div class="contenedorBody">
+    <div class="text-center pt-5 pb-4"><h1>INVOICE DETAIL</h1></div>
+    <div class="row row-cols-1 row-cols-md-6 px-4">
+        <div>
+            <label for="N_Bill" class="form-label">COD PRODUCT</label>
+            <input type="number" class="form-control py-2" name="N_Bill" id="N_Bill" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Bill_Date" class="form-label">NAME PRODUCT</label>
+            <input type="date" class="form-control py-2 mb-4" name="Bill_Date" id="Bill_Date" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Seller" class="form-label">QUANTITY</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Seller" class="form-label">UNIT VALUE</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+        <div class="botones">
+            <button type="button" class="btn btn-success">+</button>
+        </div>
+        <div class="botones">
+            <button type="button" class="btn btn-danger">-</button>
+        </div>
+
+        <div>
+            <label for="Seller" class="form-label">COD PRODUCT</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Seller" class="form-label">NAME PRODUCT</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Seller" class="form-label">QUANTITY</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+        <div>
+            <label for="Seller" class="form-label">UNIT VALUE</label>
+            <input type="text" class="form-control py-2 mb-4" name="Seller" id="Seller" placeholder="Type to number bill">
+        </div>
+        <div class="botones">
+            <button type="button" class="btn btn-success">+</button>
+        </div>
+        <div class="botones">
+            <button type="button" class="btn btn-danger">-</button>
         </div>
     </div>
 </div>
+
+<style>
+
+    .contenedorBody{
+        width: 95%;
+        border: 1px solid white;
+        border-radius: 2px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        background-color: rgb(247, 239, 239);
+        box-shadow: -10px -10px 15px white;
+    }
+
+    .contenedorBody h1::after{
+        content: "INVOICE DETAIL";
+        width: 100%;
+        color: rgb(25, 0, 255);
+        text-shadow: 2px 2px 4px blue;
+        font-size: 100%;
+        position: absolute;
+        left: 0px;
+        top: 40px;
+    }
+
+    .row {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .contenedorBody label{
+        color: white;
+    }
+
+    .contenedorBody input{        
+        box-shadow: -5px -5px 5px green;
+        font-size: 100%;
+        outline: none;
+    }
+
+    .botones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedorBody button{    
+        padding: 10px;    
+        width: 80%;
+        height: 50%;
+        top: 50%;
+        font-size: 100%;
+        outline: none;
+    }
+
+    @media (max-width: 767px) {
+        .botones{    
+            margin: 0px 0px 10px 0px !important;  
+        }
+
+        .contenedorBody button{    
+            width: 60%;
+            height: 100%;
+        }
+    }
+</style>
