@@ -2,21 +2,21 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: black;
 }
 
 .contenedorGeneral{
     font-family: 'Caveat', cursive;
+    background-color: green;
 }
 
-.contenedorGeneral > h1{
+.contenedorGeneral > div > h1{
     position: relative;
     width: 100%;
     margin: 40px 0px 40px 0px;
     text-align: center;
 }
 
-.contenedorGeneral > h1::after{
+.contenedorGeneral > div > h1::after{
     border: none;
     content: "BILL DETAILS";
     width: 100%;
@@ -25,24 +25,33 @@
     font-size: 100%;
     position: absolute;
     left: 0px;
-    top: -5px;
-}
-
-.botonesAddEnd{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    top: -8px;
 }
 
 .botonesAddEnd button{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25%;
-    margin: 0px 10px 30px 10px;
+    border-radius: 2px;
+    margin: 0px 10px;
     border: none;
     color: white;
+    background-color: transparent;
+}
+
+.botonesAddEnd .bgFinalize{
+    border: 1px solid green;
+    box-shadow: 5px 5px 10px green;
+}
+
+.botonesAddEnd .bgShow{
+    border: 1px solid blue;
+    box-shadow: 5px 5px 10px blue;
+}
+
+.botonesAddEnd .bgAdd{
+    border: 1px solid red;
+    box-shadow: 5px 5px 10px red;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -58,17 +67,5 @@ input[type=number] { -moz-appearance:textfield; }
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-}
-
-@media (max-width: 548px) {
-    .botonesAddEnd button{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 49%;
-        margin: 0px 10px 30px 10px;
-        border: none;
-        color: white;
     }
 }

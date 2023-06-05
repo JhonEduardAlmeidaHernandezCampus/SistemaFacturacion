@@ -5,7 +5,7 @@
     <div class="row contenedoresInput row-cols-1 row-cols-md-3 px-4">
         <div>
             <label for="N_Invoice" class="form-label">INVOICE NUMBER</label>
-            <input type="number" class="form-control py-2" name="N_Invoice" id="N_Invoice">
+            <input type="number" class="form-control py-2 mb-4" name="N_Invoice" id="N_Invoice">
         </div>
         <div>
             <label for="D_Invoicing" class="form-label">INVOICING DATE</label>
@@ -26,7 +26,7 @@
         </div>
         <div>
             <label for="Email_Client" class="form-label">CLIENT EMAIL</label>
-            <input type="text" class="form-control py-2 mb-4" name="Email_Client" id="Email_Client">
+            <input type="email" class="form-control py-2 mb-4" name="Email_Client" id="Email_Client">
         </div>
         
         <div>
@@ -35,7 +35,7 @@
         </div>
         <div>
             <label for="Client_Phone" class="form-label">CLIENT PHONE</label>
-            <input type="text" class="form-control py-2 mb-4" name="Client_Phone" id="Client_Phone">
+            <input type="number" class="form-control py-2 mb-4" name="Client_Phone" id="Client_Phone">
         </div>
     </div>
 </div>
@@ -54,12 +54,12 @@
     }
 
     .contenedorHeader{
-        width: 95%;
+        width: 80%;
         border: 1px solid white;
         border-radius: 2px;
         margin-left: 50%;
         transform: translateX(-50%);
-        background-color: rgb(247, 239, 239);
+        background-color: rgb(0, 0, 0, .6) !important;
         box-shadow: 10px 10px 15px white;
     }
 
@@ -92,9 +92,41 @@
     }
 
     .contenedorHeader input{   
+        background-color: transparent;
+        color: white; 
         text-align: center;     
         box-shadow: 5px 5px 5px green;
         font-size: 100%;
         outline: none;
+        font-weight: bold;
+    }
+
+    .contenedorHeader input:focus{  
+        color: white;      
+        background-color: transparent;
+    }
+
+    .contenedoresInput div:first-child input{   
+        box-shadow: 5px 5px 5px blue;
+    }
+
+    .contenedoresInput div:nth-child(6) input{   
+        box-shadow: 5px 5px 5px blue;
+    }
+
+    .contenedoresInput div:nth-child(3) input{   
+        box-shadow: 5px 5px 5px red;
+    }
+
+    .contenedoresInput div:nth-child(4) input{   
+        box-shadow: 5px 5px 5px red;
+    }
+
+    .contenedoresInput div:nth-child(7) input{   
+        box-shadow: 5px 5px 5px rgb(0, 225, 255);
+    }
+
+    .contenedoresInput div:nth-child(8) input{   
+        box-shadow: 5px 5px 5px rgb(0, 225, 255);
     }
 </style>

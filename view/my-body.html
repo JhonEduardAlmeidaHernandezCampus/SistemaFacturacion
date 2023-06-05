@@ -1,9 +1,9 @@
 <div class="contenedorBody" id="products">
     <div class="text-center pt-5 pb-4"><h1>INVOICE DETAIL</h1></div>
-    <div id="product_0" class="row row-cols-2 row-cols-md-6 px-4">
+    <div id="product_0" class="row row-cols-12 row-cols-sm-2 row-cols-md-6 px-4">
         <div>
             <label for="cod_Product" class="form-label">COD PRODUCT</label>
-            <input type="number" class="form-control py-2" name="Cod_Product" id="Cod_Product">
+            <input type="number" class="form-control py-2 mb-4" name="Cod_Product" id="Cod_Product">
         </div>
         <div>
             <label for="name_Product" class="form-label">NAME PRODUCT</label>
@@ -18,10 +18,10 @@
             <input type="number" class="form-control py-2 mb-4" name="Unit_Value" id="Unit_Value">
         </div>
         <div class="botones mb-4 mb-md-0">
-            <button type="button" class="btn btn-success" data-row="product_0">+</button>
+            <button type="button" class="bgAdd btn" data-row="product_0">+</button>
         </div>
         <div class="botones mb-4 mb-md-0">
-            <button type="button" class="btn btn-danger" data-row="product_0">-</button>
+            <button type="button" class="bgRemove btn" data-row="product_0">-</button>
         </div>
     </div>
 </div>
@@ -29,14 +29,14 @@
 <style>
 
     .contenedorBody{
-        width: 95%;
+        width: 90%;
         border: 1px solid white;
         border-radius: 2px;
         margin-left: 50%;
         margin-bottom: 40px;
         transform: translateX(-50%);
-        background-color: rgb(247, 239, 239);
-        box-shadow: -10px -10px 15px white;
+        background-color: rgb(0, 0, 0, .6) !important;
+        box-shadow: 10px 10px 15px white;
     }
 
     .contenedorBody h1::after{
@@ -63,12 +63,22 @@
         box-shadow: -5px -5px 5px green;
         font-size: 100%;
         outline: none;
+        font-weight: bold;
+        background-color: transparent;
+        color: white;
     }
 
-    .botones{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .contenedorBody input:focus{  
+        color: white;      
+        background-color: transparent;
+    }
+
+    .contenedorBody > div div:nth-child(2) input{   
+        box-shadow: 5px 5px 5px blue;
+    }
+
+    .contenedorBody > div div:nth-child(3) input{   
+        box-shadow: 5px 5px 5px blue;
     }
 
     .contenedorBody button{    
@@ -80,13 +90,49 @@
         outline: none;
     }
 
+    .botones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .botones .bgAdd,
+    .botones .bgRemove{
+        color: white;
+        width: 80%;
+    }
+
+    .botones .bgAdd:hover,
+    .botones .bgRemove:hover{
+        color: white;
+        outline: none;
+        border: none;
+    }
+
+    .botones .bgAdd{
+        border: 1px solid green;
+        box-shadow: 5px 5px 10px green;
+    }
+
+    .botones .bgRemove{
+        border: 1px solid red;
+        box-shadow: 5px 5px 10px red;
+    }
+
+    @media (min-width: 1300px) {
+        .botones .bgAdd,
+        .botones .bgRemove{
+            color: white;
+            width: 60%;
+        }
+    }
+
     @media (max-width: 767px) {
         .botones{    
             margin: 0px 0px 10px 0px !important;  
         }
 
         .botones button{    
-            width: 10%;
             height: 100%;
         }
     }
