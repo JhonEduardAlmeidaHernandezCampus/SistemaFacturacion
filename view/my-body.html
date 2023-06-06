@@ -4,9 +4,9 @@
 </div>
 
 <div class="botonesAddEnd d-flex flex-column d-sm-flex flex-sm-row">
-    <button class="bgFinalize py-1 col-8 col-sm-3 mb-4" id="finalizePurchase">FINALIZE PURCHASE</button>
-    <button class="bgShow py-1 col-8 col-sm-3 mb-4" id="showInvoice">SHOW INVOICE</button>
-    <button class="bgAdd py-1 col-8 col-sm-3 mb-4" id="add">ADD INVOICE (+)</button>
+    <button class="bgFinalize py-1 col-8 col-sm-3 mb-3" id="finalizePurchase">FINALIZE PURCHASE</button>
+    <button class="bgShow py-1 col-8 col-sm-3 mb-3" id="showInvoice">SHOW INVOICE</button>
+    <button class="bgAdd py-1 col-8 col-sm-3 mb-3" id="addInvoice">ADD INVOICE (+)</button>
 </div>
 
 <style>
@@ -74,6 +74,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .contenedorBody h1{
+            margin-top: 17px;
+        }
+
+        .contenedorBody h1::after{
+            top: 10px;
         }
     }
 

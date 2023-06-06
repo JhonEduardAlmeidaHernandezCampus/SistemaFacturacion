@@ -46,7 +46,8 @@ export class myBody extends HTMLElement{
     connectedCallback() {
         this.components().then(html => {
             this.innerHTML = html;
-            this.add = this.querySelector("#add").addEventListener("click", this.add.bind(this));
+            this.add = this.querySelector("#addInvoice").addEventListener("click", this.add.bind(this));
+            this.send = this.querySelector("#finalizePurchase").addEventListener("click", this.send.bind(this));
         })
     }
 }
