@@ -2,21 +2,25 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Caveat', cursive;
+}
+
+body{
+    font-family: 'Caveat', cursive;
 }
 
 .contenedorGeneral{
-    font-family: 'Caveat', cursive;
     background-color: green;
 }
 
-.contenedorGeneral > div > h1{
+.particles > h1{
     position: relative;
     width: 100%;
     margin: 40px 0px 40px 0px;
     text-align: center;
 }
 
-.contenedorGeneral > div > h1::after{
+.particles > h1::after{
     border: none;
     content: "BILL DETAILS";
     width: 100%;
@@ -28,32 +32,6 @@
     top: -8px;
 }
 
-.botonesAddEnd button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2px;
-    margin: 0px 10px;
-    border: none;
-    color: white;
-    background-color: transparent;
-}
-
-.botonesAddEnd .bgFinalize{
-    border: 1px solid green;
-    box-shadow: 5px 5px 10px green;
-}
-
-.botonesAddEnd .bgShow{
-    border: 1px solid blue;
-    box-shadow: 5px 5px 10px blue;
-}
-
-.botonesAddEnd .bgAdd{
-    border: 1px solid red;
-    box-shadow: 5px 5px 10px red;
-}
-
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -61,11 +39,3 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input[type=number] { -moz-appearance:textfield; }
-
-@media (max-width: 768px) {
-    .botonesAddEnd{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}

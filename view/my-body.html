@@ -1,35 +1,19 @@
-<div class="contenedorBody" id="products">
-    <div class="text-center pt-5 pb-4"><h1>INVOICE DETAIL</h1></div>
-    <div id="product_0" class="row row-cols-12 row-cols-sm-2 row-cols-md-6 px-4">
-        <div>
-            <label for="cod_Product" class="form-label">COD PRODUCT</label>
-            <input type="number" class="form-control py-2 mb-4" name="Cod_Product" id="Cod_Product">
-        </div>
-        <div>
-            <label for="name_Product" class="form-label">NAME PRODUCT</label>
-            <input type="text" class="form-control py-2 mb-4" name="Name_Product" id="Name_Product">
-        </div>
-        <div>
-            <label for="amount" class="form-label">AMOUNT</label>
-            <input type="number" class="form-control py-2 mb-4" name="amount" id="amount" value="1" readonly>
-        </div>
-        <div>
-            <label for="unit_Value" class="form-label">UNIT VALUE</label>
-            <input type="number" class="form-control py-2 mb-4" name="Unit_Value" id="Unit_Value">
-        </div>
-        <div class="botones mb-4 mb-md-0">
-            <button type="button" class="bgAdd btn" data-row="product_0">+</button>
-        </div>
-        <div class="botones mb-4 mb-md-0">
-            <button type="button" class="bgRemove btn" data-row="product_0">-</button>
-        </div>
-    </div>
+<div id="products" class="contenedorBody overflow-auto">
+    <div class="col-md-12 text-center"><h1>INVOICE DETAIL</h1></div>
+    <my-product></my-product>
+</div>
+
+<div class="botonesAddEnd d-flex flex-column d-sm-flex flex-sm-row">
+    <button class="bgFinalize py-1 col-8 col-sm-3 mb-4" id="finalizePurchase">FINALIZE PURCHASE</button>
+    <button class="bgShow py-1 col-8 col-sm-3 mb-4" id="showInvoice">SHOW INVOICE</button>
+    <button class="bgAdd py-1 col-8 col-sm-3 mb-4" id="add">ADD INVOICE (+)</button>
 </div>
 
 <style>
 
     .contenedorBody{
         width: 90%;
+        height: 220px;
         border: 1px solid white;
         border-radius: 2px;
         margin-left: 50%;
@@ -37,6 +21,10 @@
         transform: translateX(-50%);
         background-color: rgb(0, 0, 0, .6) !important;
         box-shadow: 10px 10px 15px white;
+    }
+
+    .contenedorBody h1{
+        margin-top: 7px;
     }
 
     .contenedorBody h1::after{
@@ -47,93 +35,46 @@
         font-size: 100%;
         position: absolute;
         left: 0px;
-        top: 40px;
+        top: 0px;
     }
 
-    .row {
-        margin: 0 !important;
-        padding: 0 !important;
+    .botonesAddEnd{
+        display: flex;
+        justify-content: center;
     }
 
-    .contenedorBody label{
-        color: white;
-    }
-
-    .contenedorBody input{        
-        box-shadow: -5px -5px 5px green;
-        font-size: 100%;
-        outline: none;
-        font-weight: bold;
-        background-color: transparent;
-        color: white;
-    }
-
-    .contenedorBody input:focus{  
-        color: white;      
-        background-color: transparent;
-    }
-
-    .contenedorBody > div div:nth-child(2) input{   
-        box-shadow: 5px 5px 5px blue;
-    }
-
-    .contenedorBody > div div:nth-child(3) input{   
-        box-shadow: 5px 5px 5px blue;
-    }
-
-    .contenedorBody button{    
-        padding: 10px;    
-        width: 80%;
-        height: 50%;
-        top: 50%;
-        font-size: 100%;
-        outline: none;
-    }
-
-    .botones{
+    .botonesAddEnd button{
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .botones .bgAdd,
-    .botones .bgRemove{
-        color: white;
-        width: 80%;
-    }
-
-    .botones .bgAdd:hover,
-    .botones .bgRemove:hover{
-        color: white;
-        outline: none;
+        border-radius: 2px;
+        margin: 0px 10px;
         border: none;
+        color: white;
+        background-color: transparent;
     }
 
-    .botones .bgAdd{
+    .botonesAddEnd .bgFinalize{
         border: 1px solid green;
         box-shadow: 5px 5px 10px green;
     }
 
-    .botones .bgRemove{
+    .botonesAddEnd .bgShow{
+        border: 1px solid blue;
+        box-shadow: 5px 5px 10px blue;
+    }
+
+    .botonesAddEnd .bgAdd{
         border: 1px solid red;
         box-shadow: 5px 5px 10px red;
     }
 
-    @media (min-width: 1300px) {
-        .botones .bgAdd,
-        .botones .bgRemove{
-            color: white;
-            width: 60%;
+    @media (max-width: 768px) {
+        .botonesAddEnd{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 
-    @media (max-width: 767px) {
-        .botones{    
-            margin: 0px 0px 10px 0px !important;  
-        }
-
-        .botones button{    
-            height: 100%;
-        }
-    }
 </style>

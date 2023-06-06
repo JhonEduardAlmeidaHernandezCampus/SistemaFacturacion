@@ -11,33 +11,42 @@ export class myBody extends HTMLElement{
         return await (await fetch("view/my-body.html")).text();
     }
 
-    selection(e){
+    async add(e){
         let $ = e.target;
-        if($.nodeName == "BUTTON") {
-            let inputss = this.querySelectorAll(`#${$.dataset.row} input`);
-            if($.innerHTML == "-"){
-                inputss.forEach(element => {
-                    if(element.getAttribute("name") == "amount" && element.value == 0){
-                        this.querySelector(`#${$.dataset.row}`).remove();
-                    } else if(element.name == "amount"){
-                        element.value--;
-                    }
-                });
-            } else{
-                inputss.forEach(element => {
-                    if(element.getAttribute("name") == "amount"){
-                        element.value++;
-                    }
-                });
-            }
+        if ($.nodeName == "BUTTON") {
+            let plantilla = this.querySelector("#products").children;
+            plantilla = plantilla[plantilla.length-1];
+            plantilla = plantilla.cloneNode(true);
+            document.querySelector("#products").insertAdjacentElement("beforeend", plantilla);
         }
     }
 
-    connectedCallback(){
-        this.components().then(html=>{
+    async send(){
+        let input = document.querySelectorAll("input");
+        let info = {}, producto = {}, lista = {}, data = {}, count = 0;
+        producto.product = [];
+        input.forEach((val, id) => {
+            if (id <= 7) {
+                info[val.name] = val.value;
+            } else if (count <= 4) {
+                lista[val.name] = val.value;
+                count++;
+                if (count == 4) {
+                producto.product.push(lista);
+                lista = {};
+                count = 0;
+                }
+            }
+        });
+        data.info = info;
+        data.producto = producto.product;
+        console.log(data);
+    }
+
+    connectedCallback() {
+        this.components().then(html => {
             this.innerHTML = html;
-            this.container = this.querySelector("#products");
-            this.container.addEventListener("click", this.selection);
+            this.add = this.querySelector("#add").addEventListener("click", this.add.bind(this));
         })
     }
 }
