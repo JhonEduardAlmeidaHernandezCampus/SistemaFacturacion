@@ -21,29 +21,50 @@ export class myBody extends HTMLElement{
         }
     }
 
-    async send(){
-        let input = document.querySelectorAll("input");
-        let info = {}, producto = {}, lista = {}, data = {}, count = 0;
-        producto.product = [];
-        input.forEach((val, id) => {
-            if (id <= 7) {
-                info[val.name] = val.value;
-            } else if (count <= 4) {
-                lista[val.name] = val.value;
-                count++;
-                if (count == 4) {
-                producto.product.push(lista);
-                lista = {};
-                count = 0;
+    async send() {
+
+        let inputs = document.querySelectorAll("input"); //hace referencia al documento principal
+        let arrayInputs = Array.prototype.slice.call(inputs) // Convierte el notList en un array
+        let Invoice = {}, Seller = {}, Client = {}, Products = {};
+        let data = {
+            Productos: []
+        }
+
+        arrayInputs.forEach((val, id) => {
+            if(val.name.includes("Invoice")){
+                Invoice[val.name] = val.value
+            }
+
+            else if(val.name.includes("Client")){
+                Client[val.name] = val.value
+            }
+
+            else if (val.name.includes("Product")){
+                Products[val.name] = val.value;
+                if(Object.keys(Products).length == 4){
+                    data.Productos.push(Products);
+                    Products = {};
                 }
             }
-        });
-        data.info = info;
-        data.producto = producto.product;
+            
+            else {
+                Seller[val.name] = val.value
+            }
 
-        let peticio = await fetch("uploads/app.php");
-        let res = await peticio.text();                     //VER ESTE CODIGO 
-        document.querySelector("pre").innerHTML = res;
+        });
+
+        data.InvoiceChiquito = Invoice;
+        data.Seller = Seller;
+        data.Client = Client;
+        
+        let config = {
+            method: "POST",
+            header: {"Content-Type": "application/json"},
+            body:JSON.stringify(data)
+        }
+
+        let peticion = await(await fetch("uploads/app.php")).text();
+        document.querySelector("pre").innerHTML = peticion;
     }
 
     connectedCallback() {

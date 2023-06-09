@@ -20,7 +20,7 @@ export class myProduct extends HTMLElement{
            
             if ($.innerHTML == "-") {
                 inputs.forEach(element => {
-                    if (element.name == "amount" && element.value == 0) {
+                    if (element.name == "amount_Product" && element.value == 0) {
 
                         if(box.parentNode.parentNode.children.length > 1 && box.parentNode.parentNode.children.length == 2){
                             box.remove();
@@ -28,13 +28,13 @@ export class myProduct extends HTMLElement{
                             box.parentNode.remove();
                         }
 
-                    } else if (element.name == "amount") {
+                    } else if (element.name == "amount_Product") {
                         element.value--;
                     }
                 });
             } else if ($.innerHTML == "+") {
                 inputs.forEach(element => {
-                    if (element.name == "amount") {
+                    if (element.name == "amount_Product") {
                         element.value++;
                     }
                 });
