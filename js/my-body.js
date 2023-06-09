@@ -40,7 +40,10 @@ export class myBody extends HTMLElement{
         });
         data.info = info;
         data.producto = producto.product;
-        console.log(data);
+
+        let peticio = await fetch("uploads/app.php");
+        let res = await peticio.text();                     //VER ESTE CODIGO 
+        document.querySelector("pre").innerHTML = res;
     }
 
     connectedCallback() {
