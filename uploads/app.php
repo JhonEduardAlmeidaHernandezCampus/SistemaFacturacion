@@ -4,17 +4,28 @@
         public static function getInstance() {
             $arg = func_get_args();
             $arg = array_pop($arg);
-            return (!(self::$instance instanceof self) || !empty($arg)) ? self::$instance = new static(...(array) $arg) : self::$instance;
+            return (self::$instance == null) ? self::$instance = new self(...(array) $arg) : self::$instance;
+        }
+
+        //modificadores de acceso 
+        function __set($name, $value){
+            $this->$name = $value;
+        }
+
+        function __get($name){
+            return $this->name;
         }
     }
     function autoload($class) {
         // Directorios donde buscar archivos de clases
         $directories = [
-            dirname(__DIR__).'/scripts/'
+            dirname(__DIR__).'/scripts/bills/',
+            dirname(__DIR__).'/scripts/client/',
+            dirname(__DIR__).'/scripts/invoice/',
+            dirname(__DIR__).'/scripts/product/',
+            dirname(__DIR__).'/scripts/db/'
         ];
-        // Convertir el nombre de la clase en un nombre de archivo relativo
-        $classFile = str_replace('\\', '/', $class) . '.php';
-    
+        // Convertir el nombre de la clase en un N_Bill
         // Recorrer los directorios y buscar el archivo de la clase
         foreach ($directories as $directory) {
             $file = $directory.$classFile;
