@@ -27,7 +27,7 @@ export class myBody extends HTMLElement{
         let arrayInputs = Array.prototype.slice.call(inputs) // Convierte el notList en un array
         let Invoice = {}, Seller = {}, Client = {}, Products = {};
         let data = {
-            Productos: []
+            Products: []
         }
 
         arrayInputs.forEach((val, id) => {
@@ -39,10 +39,11 @@ export class myBody extends HTMLElement{
                 Client[val.name] = val.value
             }
 
+            //Esto no sirve, porque se necesita que lleguen los 4 datos que se estan pidiendo, no solo el array :)
             else if (val.name.includes("Product")){
                 Products[val.name] = val.value;
                 if(Object.keys(Products).length == 4){
-                    data.Productos.push(Products);
+                    data.Products.push(Products);
                     Products = {};
                 }
             }
@@ -53,9 +54,12 @@ export class myBody extends HTMLElement{
 
         });
 
-        data.InvoiceChiquito = Invoice;
+        data.Invoice = Invoice;
         data.Seller = Seller;
         data.Client = Client;
+        // data.Products = Products;
+
+
         
         let config = {
             method: "POST",
@@ -63,7 +67,7 @@ export class myBody extends HTMLElement{
             body:JSON.stringify(data)
         }
 
-        let peticion = await(await fetch("uploads/app.php")).text();
+        let peticion = await(await fetch("uploads/app.php", config)).text();
         document.querySelector("pre").innerHTML = peticion;
     }
 
