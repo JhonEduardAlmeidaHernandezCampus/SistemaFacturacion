@@ -12,10 +12,6 @@
         function __set($name, $value){
             $this->$name = $value;
         }
-
-        function __get($name){
-            return $this->name;
-        }
     }
 
     function autoload($class) {
@@ -45,7 +41,11 @@
     }
     spl_autoload_register('autoload');
 
-    class Datos{
+    $obj = new connect();
+
+    client::getInstance(file_get_contents("php://input"), true);
+
+    /* class Datos{
         use getInstance;
         public function __construct(private $_METHOD, public $_HEADER, private $_DATA){
             match($_METHOD){
@@ -74,9 +74,7 @@
         "_DATA" => json_decode(file_get_contents("php://input"), true)
     ];
 
-    var_dump($data);
-
     //llmamos la instancia y le pasamos la data del contrsuctor
-    Datos::getInstance($data);
+    Datos::getInstance($data); */
 
 ?>

@@ -28,3 +28,6 @@ ALTER TABLE tb_invoice MODIFY fk_id_seller INTEGER(11) NOT NULL COMMENT 'Relacio
 ALTER TABLE tb_invoice ADD CONSTRAINT tb_invoice_tb_client_fk FOREIGN KEY(fk_id_client) REFERENCES tb_client(id_client);
 ALTER TABLE tb_invoice ADD CONSTRAINT tb_invoice_tb_products_fk FOREIGN KEY(fk_cod_product) REFERENCES tb_products(cod_product);
 ALTER TABLE tb_invoice ADD CONSTRAINT tb_invoice_tb_seller_fk FOREIGN KEY(fk_id_seller) REFERENCES tb_seller(id_seller);
+
+USE db_hunter_facture;
+INSERT INTO tb_client(identificacion, full_name, email, address, phone)VALUE("1102391275", "Jhon Eduard Almeida Hernandez", "jhonhernandez.campus@gmail.com", "Calle 11B - Zafiro", "3005559677");
