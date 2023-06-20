@@ -68,8 +68,8 @@ export class myBody extends HTMLElement{
         }
 
         let peticion = await(await fetch("uploads/app.php", config)).text();
-        document.querySelector("pre").innerHTML = peticion;
-    }
+        /* document.querySelector("pre").innerHTML = peticion; */    
+        }
 
     connectedCallback() {
         this.components().then(html => {

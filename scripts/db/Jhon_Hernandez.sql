@@ -29,5 +29,6 @@ ALTER TABLE tb_invoice ADD CONSTRAINT tb_invoice_tb_client_fk FOREIGN KEY(fk_id_
 ALTER TABLE tb_invoice ADD CONSTRAINT tb_invoice_tb_products_fk FOREIGN KEY(fk_cod_product) REFERENCES tb_products(cod_product);
 ALTER TABLE tb_invoice ADD CONSTRAINT tb_invoice_tb_seller_fk FOREIGN KEY(fk_id_seller) REFERENCES tb_seller(id_seller);
 
-USE db_hunter_facture;
-INSERT INTO tb_client(identificacion, full_name, email, address, phone)VALUE("1102391275", "Jhon Eduard Almeida Hernandez", "jhonhernandez.campus@gmail.com", "Calle 11B - Zafiro", "3005559677");
+USE db_hunter_facture_JhonHernandez_;
+INSERT INTO tb_client(id_client, name_client, email_client, client_address, client_phone)VALUE(1102391275, "Jhon Eduard Almeida Hernandez", "jhonhernandez.campus@gmail.com", "Calle 11B - Zafiro", 300555967);
+SELECT * FROM tb_client;

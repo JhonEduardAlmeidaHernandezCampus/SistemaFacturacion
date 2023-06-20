@@ -41,9 +41,14 @@
     }
     spl_autoload_register('autoload');
 
-    $obj = new connect();
+    client::getInstance(json_decode(file_get_contents("php://input"), true))->getClient();
 
-    client::getInstance(file_get_contents("php://input"), true);
+
+
+
+
+
+
 
     /* class Datos{
         use getInstance;
